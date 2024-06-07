@@ -1,0 +1,109 @@
+:root {
+  color-scheme: dark light;
+}
+
+/* Basic reset and styles for the navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+
+.nav-links li {
+  position: relative;
+  padding: 15px 20px;
+}
+
+.nav-links a {
+  display: block;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: 150px;
+}
+
+.nav-links li:hover .dropdown,
+.nav-links li:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.dropdown li:hover,
+.dropdown li:focus {
+  background-color: #f0f0f0;
+}
+
+.hamburger {
+  display: none;
+  /* Initially hidden */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  /* Hide checkbox */
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide the menu initially */
+    grid-auto-flow: row;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu-toggle:checked+.hamburger+.nav-links {
+    display: grid;
+    /* Show menu when checkbox is checked */
+  }
+}
+
+/* Optional: Add transitions for smooth dropdown */
+.dropdown,
+.dropdown li {
+  transition: all 0.3s ease;
+}

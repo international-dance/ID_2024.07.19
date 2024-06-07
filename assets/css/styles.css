@@ -1,1 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300&display=swap');
+@import url('https://fonts.cdnfonts.com/css/agencyfb-2');
+@import url('https://fonts.googleapis.com/css?family=Electrolize');
 
+/* RESET --------------------------------------------
+*/
+*,
+*:after,
+*:before,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLOR-SCHEMES ::
+       https://web.dev/articles/color-scheme
+       Supports both dark and light color-schemes, but the page author prefers dark.
+    */
+  color-scheme: dark light;
+
+  /* THEMES::
+       https://alexandersandberg.com/articles/creating-a-website-theme-switcher-with-css-only/
+    */
+}
+
+body,
+html,
+app-container {
+  background-color: var(--bg-color);
+  position: relative;
+  height: 100dvh;
+  padding: 0;
+  margin: 0;
+}
+
+app-container {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+header,
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+
+
+
+/* Theme switch
+    */
+:root {
+  /* Light mode */
+  --light-switch-shadow: #373d4e;
+  --light-switch-icon: "🌚";
+  --light-switch-text: "dark mode?";
+  --light-text: #222430;
+  --light-bg: #f7f7f7;
+  --light-theme: #d34a97;
+
+  /* Dark mode */
+  --dark-switch-shadow: #fce477;
+  --dark-switch-icon: "🌝";
+  --dark-switch-text: "light mode?";
+  --dark-text: #f7f7f7;
+  --dark-bg: #222430;
+  --dark-theme: #bd93f9;
+
+  /* Default mode */
+  --switch-shadow-color: var(--light-switch-shadow);
+  --switch-icon: var(--light-switch-icon);
+  --switch-text: var(--light-switch-text);
+  --text-color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --theme-color: var(--light-theme);
+}
+
+/* Switched mode */
+app-container #theme-switch:checked {
+  --switch-shadow-color: var(--dark-switch-shadow);
+  --switch-icon: var(--dark-switch-icon);
+  --switch-text: var(--dark-switch-text);
+  --text-color: var(--dark-text);
+  --bg-color: var(--dark-bg);
+  --theme-color: var(--dark-theme);
+}
+
+/* Theme switcher */
+#theme-switch {
+  /* Hides the checkbox */
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.switch-label {
+  cursor: pointer;
+  display: flex;
+}
+
+.switch-label::before {
+  content: var(--switch-icon);
+  font-size: 40px;
+  transition: text-shadow .2s;
+}
+
+.switch-label::after {
+  align-self: center;
+  content: var(--switch-text);
+  color: var(--switch-shadow-color);
+  font-size: 28px;
+  line-height: 40px;
+  opacity: 0;
+  padding-left: 15px;
+  transition: opacity .2s;
+}
+
+app-container .theme-switch:focus .switch-label::before,
+.switch-label:hover::before {
+  text-shadow: 0 0 15px var(--switch-shadow-color);
+}
+
+app-container .theme-switch:focus .switch-label::after,
+.switch-label:hover::after {
+  opacity: 1;
+}
+
+
+.mySwiper .theme-switch:focus~.switch-label::before,
+.mySwiper .switch-label:hover::before {
+  text-shadow: 0 0 15px var(--switch-shadow-color);
+}
+
+.mySwiper .theme-switch:focus~.switch-label::after,
+.mySwiper .switch-label:hover::after {
+  opacity: 1;
+}
+
+
+/* ADAPTIVE LOGO::
+       https://web.dev/articles/building/an-adaptive-favicon
+    */
+@media (prefers-color-scheme: dark) {
+  .favicon-stroke {
+    stroke: #343a40
+  }
+
+  #skull-outline {
+    fill: #adb5bd
+  }
+
+  #hat-outline {
+    fill: #343a40
+  }
+
+  #eyes-and-nose {
+    fill: #343a40
+  }
+}
+
+fieldset {
+  background-color: gainsboro;
+}
+
+@media (prefers-color-scheme: dark) {
+  fieldset {
+    background-color: darkslategray;
+  }
+}
+
+app-container {
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font: normal 125%/1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+  min-height: 100%;
+  transition: color .250s, background-color .250s;
+}
+
+app-container:has(footer:last-child) {
+  opacity: 1;
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  background: var(--bg-color);
+  display: flex;
+  padding: 30px;
+}
+
+.mySwiper2 swiper-slide {
+  flex-direction: column;
+  height: auto;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: var(--link-color);
+}
+
+
+app-logo,
+powered-by,
+social-media,
+log-in {
+  padding: 1rem;
+}
+
+p {
+  margin-block-start: 1rem;
+  margin-inline: 1rem;
+}
+
+/* ADAPTIVE LOGO::
+       https://web.dev/articles/building/an-adaptive-favicon
+    */
+@media (prefers-color-scheme: dark) {
+  .favicon-stroke {
+    stroke: #343a40
+  }
+
+  #skull-outline {
+    fill: #adb5bd
+  }
+
+  #hat-outline {
+    fill: #343a40
+  }
+
+  #eyes-and-nose {
+    fill: #343a40
+  }
+}

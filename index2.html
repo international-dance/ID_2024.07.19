@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <title>Create a responsive bar using HTML and CSS</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <!-- https://www.learnically.com/responsive-navigation-bar-using-html-and-css/ -->
+      <!-- LOGO -->
+      <div class="logo">LOGO</div>
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <li>
+          <input type="checkbox" id="theme-switch">
+          <div id="page">
+            <label for="theme-switch"></label>
+            <!-- Insert page content here -->
+          </div>
+        </li>
+        <li>
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle">
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li class="services">
+              <a href="/">Services</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/">Dropdown 1</a></li>
+                <li><a href="/">Dropdown 2</a></li>
+                <li><a href="/">Dropdown 2</a> </li>
+                <li><a href="/">Dropdown 3</a></li>
+                <li><a href="/">Dropdown 4</a> </li>
+              </ul>
+            </li>
+            <li><a href="/">Pricing</a></li>
+            <li><a href="/">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+
+</html>

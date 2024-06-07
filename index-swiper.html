@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+      /** Demo styles **/
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      body {
+        background: #000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        overflow: hidden;
+      }
+
+      /** Swiper styles **/
+
+      :root {
+        --swiper-pagination-top: 10px;
+        --swiper-pagination-bottom: auto;
+      }
+
+      .swiper {
+        user-select: none;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+
+        height: 100%;
+
+        padding: 0px 0px;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+
+        overflow: hidden;
+      }
+
+      .swiper-slide-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .swiper-slide-3f38 {
+        background-color: rgba(51, 51, 51, 1);
+      }
+      .swiper-slide-content-cd26 {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 48px 48px;
+        gap: 0px;
+      }
+      .swiper-slide-text-79be {
+        color: rgba(255, 255, 255, 1);
+        text-align: left;
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: bold;
+      }
+      .swiper-slide-image-61a8 {
+        max-height: 100%;
+        min-height: 0;
+        object-fit: cover;
+        width: 100%;
+      }
+      .swiper-slide-text-f7f1 {
+        color: rgba(255, 255, 255, 1);
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .swiper-slide-image-a4cc {
+        max-width: 100%;
+        min-width: 0;
+        max-height: 100%;
+        min-height: 0;
+        object-fit: contain;
+      }
+      .swiper-slide-text-1b49 {
+        color: rgba(255, 255, 255, 1);
+        text-align: left;
+        font-size: 77px;
+        line-height: 1.5;
+      }
+      .swiper-slide-block-fe7a {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 0px;
+        padding: 0px 0px;
+      }
+      .swiper-slide-text-0ec2 {
+        color: rgba(255, 255, 255, 1);
+        text-align: left;
+        font-size: 41px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-1">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 1
+            </div>
+
+            <img
+              alt="image"
+              class="swiper-slide-image swiper-slide-image-61a8"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+              src="https://studio.swiperjs.com/demo-images/nature/01.jpg">
+
+            <div
+              class="swiper-slide-text swiper-slide-text-f7f1"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide text
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-2">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 2
+            </div>
+
+            <img alt="image"
+              class="swiper-slide-image swiper-slide-image-a4cc"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+              src="https://studio.swiperjs.com/demo-images/nature/10.jpg">
+
+            <div
+              class="swiper-slide-text swiper-slide-text-1b49"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide text
+            </div>
+
+            <div
+              class="swiper-slide-block swiper-slide-block-fe7a"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            ></div>
+
+            <div
+              class="swiper-slide-text swiper-slide-text-0ec2"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide text
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-3">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 3
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-4">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 4
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-5">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 5
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-6">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 6
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-7">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 7
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-8">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 8
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-9">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 9
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide swiper-slide-3f38" data-hash="slide-10">
+          <div class="swiper-slide-content swiper-slide-content-cd26">
+            <div
+              class="swiper-slide-text swiper-slide-text-79be"
+              data-swiper-parallax="280"
+              data-swiper-parallax-scale="0.65"
+              data-swiper-parallax-opacity="0.15"
+            >
+              Slide 10
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".swiper", {
+        hashNavigation: { watchState: true, enabled: true },
+        observer: true,
+        observeParents: true,
+        loop: true,
+        watchSlidesProgress: true,
+        grabCursor: true,
+        pagination: { clickable: true, el: ".swiper-pagination" },
+        parallax: { enabled: true },
+        speed: 600,
+        keyboard: { enabled: true },
+      });
+    </script>
+  </body>
+</html>

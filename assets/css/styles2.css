@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300&display=swap');
+@import url('https://fonts.cdnfonts.com/css/agencyfb-2');
+@import url('https://fonts.googleapis.com/css?family=Electrolize');
+
+/* RESET --------------------------------------------
+*/
+*,
+*:after,
+*:before,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme switch
+*/
+:root {
+
+  @media (prefers-color-scheme: light) {
+    /* Light mode */
+    --light-switch-shadow: #373d4e;
+    --light-switch-icon: "🌚";
+    --light-switch-text: "dark mode?";
+    --light-text: #222430;
+    --light-bg: #f7f7f7;
+    --light-theme: #d34a97;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* Dark mode */
+    --dark-switch-shadow: #fce477;
+    --dark-switch-icon: "🌝";
+    --dark-switch-text: "light mode?";
+    --dark-text: #f7f7f7;
+    --dark-bg: #222430;
+    --dark-theme: #bd93f9;
+  }
+    /* Default mode */
+    --switch-shadow-color: var(--light-switch-shadow);
+    --switch-icon: var(--light-switch-icon);
+    --switch-text: var(--light-switch-text);
+    --text-color: var(--light-text);
+    --bg-color: var(--light-bg);
+    --theme-color: var(--light-theme);
+}
+
+
+
+/* ----------------------------vvvvv */
+
+:root {
+  /* Light mode */
+  --light-text: #222430;
+  --light-bg: #f7f7f7;
+  --light-theme: #d34a97;
+
+  /* Dark mode */
+  --dark-text: #f7f7f7;
+  --dark-bg: #222430;
+  --dark-theme: #bd93f9;
+  /* Default mode */
+  --text-color: var(--light-text);
+  --bg-color: var(--light-bg);
+  --theme-color: var(--light-theme);
+}
+
+/* Switched mode */
+body:has(.theme-switch:checked) {
+  --text-color: var(--dark-text);
+  --bg-color: var(--dark-bg);
+  --theme-color: var(--light-theme);
+}
+
+:root {
+  /* Light mode */
+  --light-switch-shadow: #373d4e;
+  --light-switch-icon: "🌚";
+  --light-switch-text: "dark mode?";
+
+  /* Dark mode */
+  --dark-switch-shadow: #fce477;
+  --dark-switch-icon: "🌝";
+  --dark-switch-text: "light mode?";
+
+  /* Default mode */
+  --switch-shadow-color: var(--light-switch-shadow);
+  --switch-icon: var(--light-switch-icon);
+  --switch-text: var(--light-switch-text);
+}
+
+body:has(.theme-switch:checked) {
+  --switch-shadow-color: var(--dark-switch-shadow);
+  --switch-icon: var(--dark-switch-icon);
+  --switch-text: var(--dark-switch-text);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-switch {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.switch-label::before {
+  content: var(--switch-icon);
+  font-size: 40px;
+  transition: text-shadow .2s;
+}
+
+.switch-label::after {
+  content: var(--switch-text);
+  color: var(--switch-shadow-color);
+}
+
+.theme-switch:focus ~ #page .switch-label::before,
+.switch-label:hover::before {
+  text-shadow: 0 0 15px var(--switch-shadow-color);
+}
+
+/* ----------------------------^^^^^ */
+
+
+
+
+body {
+  font-family: Oxanium;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Responsive Navigation Bar Using HTML and CsS */
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #004aad;
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+menu li:hover {
+  background-color: #004aad;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+menu li {
+  padding: 5px 14px;
+
+  /* DROPDOWN MENU */
+  .services {
+    position: relative;
+  }
+}
+
+.dropdown {
+  background-color: #004aad;
+  padding: 1em 0;
+  position: absolute;
+  /* WITH RESPECT TO PARENT */
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+}
+
+.dropdown li+li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  background-color: #4c9e9e;
+}
+
+.services:hover .dropdown {
+  display: block;
+}
+
+/* RESPONSIVE NAVBAR MENU STARTS */
+/* CHECKBOX HACK */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: #004aad;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  menu li:hover {
+    display: inline-block;
+    background-color: #004aad;
+    transition: 0.3s ease;
+  }
+
+  menu li+li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked~.menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #004aad;
+  }
+}
